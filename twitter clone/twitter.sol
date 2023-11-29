@@ -5,6 +5,7 @@ pragma solidity ^0.8.0;
 //2. create a mapping between user and tweet
 //3. add function to create a tweet and save it in mapping
 //4. create a function to get tweet
+
 //1.
 contract Twitter{
 
@@ -12,7 +13,7 @@ contract Twitter{
 mapping(address => string) public tweets;
 
 //3. func to create the tweet 
-function createTweet(string memory _tweet) public 
+function createTweet(string memory _tweet) public {
      tweets[msg.sender] = _tweet; 
      //saving the tweet
      }
@@ -24,17 +25,5 @@ function getTweet(address _owner) public view returns (string memory)
 //view is specified cos its simply returning some data and allows sol to be more gas efficient.
 {
 return tweets[_owner]; //finding thats why square bracket
-}
-     
-
-
-
-
-
-
-
-
-
-
-
+ }
 }
