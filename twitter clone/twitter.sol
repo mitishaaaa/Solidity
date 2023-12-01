@@ -26,4 +26,12 @@ function getTweet(address _owner) public view returns (string memory)
 {
 return tweets[_owner]; //finding thats why square bracket
  }
+
+
+function getAllTweets(address _owner) public view returns (string[] memory) {
+return tweets[_owner];
 }
+
+}
+
+
