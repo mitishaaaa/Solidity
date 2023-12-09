@@ -12,7 +12,7 @@ contract PausableToken {
         paused = false;
         balances[owner] = 1000;
     }
-
+//implement the modifier to allow only the owner to call this function
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can perform this action");
         _;
@@ -22,7 +22,7 @@ contract PausableToken {
         require(!paused, "Contract is paused");
         _;
     }
-
+//implement the modifier to check if the contract is not paused
     function pause() public onlyOwner {
         paused = true;
     }
@@ -30,7 +30,7 @@ contract PausableToken {
     function unpause() public onlyOwner {
         paused = false;
     }
-
+   // use the notPaused modifier in this function
     function transfer(address to, uint amount) public notPaused {
         require(balances[msg.sender] >= amount, "Insufficient balance");
 
